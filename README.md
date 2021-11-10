@@ -47,4 +47,27 @@ To access the application open the web browser and go to "localhost:8000"
 
 All right the project is now running .Enjoy the project.
 
+# Screenshots
+## Sign in Page
+![alt text](/Documentation/Screenshots/1.png)
+
+## Make you Profile (For first time user)
+![alt text](/Documentation/Screenshots/2.png)
+
+## New Job Feed (For job seeker)
+![alt text](/Documentation/Screenshots/3.png)
+
+## New Job Feed (For both profile type)
+![alt text](/Documentation/Screenshots/4.png)
+
+## Job Details (on clicking view more button)
+![alt text](/Documentation/Screenshots/5.png)
+
+## Post a Job (Job Provider can post a job)
+![alt text](/Documentation/Screenshots/6.png)
+
+## Posted Job Response (For Job provider)
+![alt text](/Documentation/Screenshots/7.png)
+
+
 
