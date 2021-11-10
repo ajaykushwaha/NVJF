@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Job Responses</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<script>
+
+function selectJOB(id)
+{
+  var btn = document.getElementById(id);
+
+  btn_jq = $("#"+id)
+  var job_id=btn.name
+  var data ={'job_id':job_id,'user_id':id};
+  var URL = "{% url 'save_job_response' %}";
+  $.ajaxSetup({
+            data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+        });
+          $.post(URL, data,function( data ) {
+              
+              });
+
+
+  console.log(btn.id);
+  if (btn.value == "Selected") 
+  {
+    btn.value = "Select for Job";
+    btn.innerHTML = "Select for Job";
+    btn_jq.removeClass("btn-success");
+    btn_jq.addClass("btn-primary");
+  }
+  else 
+  {
+    btn.value = "Selected";
+    btn.innerHTML = "Selected";
+    btn_jq.removeClass("btn-primary");
+    btn_jq.addClass("btn-success");
+  }
+
+}
+
+</script>
+
+<body>
+  {% load static %}
+
+<div class="container">
+  <h2>Job Responses : </h2>
+  <hr>
+  
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 60%;margin: auto;">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+          
+        <img src="{% static '' %}{{detail.first_image}}" alt="Los Angeles" style="width:100%;">
+      </div>
+           {% for i in detail.image %}
+      <div class="item">
+        <img src="{% static '' %}{{i}}" alt="Chicago" style="width:100%;">
+      </div>
+      {% endfor %}
+        
+         
+      
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+      
+  </div>
+  </div>
+
+
+
+  <div class="container-fluid">
+    <br>
+    <div class="row">
+      <div class="col-sm-9 well">
+        {{detail.job_desc}}
+        </h3>
+      </div>
+      <div class="col-sm-3">
+        <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-10  alert alert-success"> 
+            <strong> Date </strong>: <br>{{detail.job_date}} , {{detail.job_time}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2"></div>
+          <div class="col-sm-10 alert alert-danger"> 
+            <strong>Money </strong> : {{detail.job_price}}
+            </h4>
+          </div>
+        </div>
+        </div>
+    </div>
+    <iframe id= "disp_map" src="https://maps.google.com/?q={{detail.job_latitude}},{{detail.job_longitude}}&output=svembed" title="gmaps" style="margin: auto;display:block;height: 286px;width: 333px;"></iframe>
+    <br>
+    <div class="row">
+      <div class="alert alert-warning" style="text-align: center;">
+        <strong>Address</strong> : {{detail.job_address}}
+      </div>      
+    </div>
+  </div>
+
+  <br>
+  <h4>Job Responses :</h4>
+  <hr>
+  
+
+  {% for i in users_apply %}
+
+  <div class="row well">
+    <div class="col-sm-9">
+      <div class="row well">
+        <div class="col-sm-4" style="background-color:wheat;">Name : </div>
+        <div class="col-sm-8" style="background-color:darkgray;color: white;">{{i.user_id.name}}</div>
+      </div>
+      <div class="row well">
+        <div class="col-sm-4" style="background-color:wheat;">Email id : </div>
+        <div class="col-sm-8" style="background-color:darkgray;color: white;">{{i.user_id.email}}</div>
+      </div>
+      <div class="row well">
+        <div class="col-sm-4" style="background-color:wheat;">Mobile no : </div>
+        <div class="col-sm-8" style="background-color:darkgray;color: white;">{{i.user_id.phone_no}}</div>
+      </div>
+      <div class="row well" style="margin-bottom: 0px;">
+        <div class="col-sm-4" style="background-color:wheat;">Aadhar no : </div>
+        <div class="col-sm-8" style="background-color:darkgray;color: white;">{{i.user_id.aadhar_no}}</div>
+      </div>
+    </div>    
+    <div class="col-sm-3">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+              <div class="row">
+                <br><br>
+                <img src="{% static '' %}{{i.user_id.image}}"  class="img-circle" alt="Job  photo" style="width: 100%;">
+              </div>
+              <div class="row">
+                <br>
+              
+                <button id="{{i.user_id.user_id}}" type="button" 
+                {% if i.is_job_approved == False %} class= "btn btn-primary btn-lg"  style="width: 100%;" onclick="selectJOB(this.id)" value="Select for Job" name="{{i.job_id.job_id}}">Select for Job 
+                {% else %} 
+                class= "btn btn-success btn-lg"  style="width: 100%;" onclick="selectJOB(this.id)" value="Selected" name="{{i.job_id.job_id}}">Selected
+                {% endif %} </button>
+              </div>
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+{% endfor %}
+
+  
+
+
+
+</div>
+
+</body>
+</html>
+ 

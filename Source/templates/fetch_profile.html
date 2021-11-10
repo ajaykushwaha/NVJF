@@ -1,0 +1,125 @@
+{% extends "nav.html" %}
+{% block content %}
+
+<script>
+// {% if profile_type|stringformat:"s" == '3' %}
+// alert( 3);
+// {% else %}
+// alert(1);
+// {% endif%}
+
+$(window).on('load', function() {
+    var expanded = false;
+      
+
+    $('#profiles').click(function() 
+    {
+        if($('#provider_only').is(':checked')) 
+        { 
+            document.getElementById("skills_form").style.display = "none";
+        }
+        else
+        {
+            document.getElementById("skills_form").style.display = "block";
+        }
+    });
+
+})
+
+function previewFile(input){
+        var file = $("input[type=file]").get(0).files[0];
+ 
+        if(file){
+            var reader = new FileReader();
+ 
+            reader.onload = function(){
+                $("#previewImg").attr("src", reader.result);
+            }
+ 
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
+
+
+
+  {% load static %}
+
+
+<div class="container">
+  <h2>Profile : </h2>
+  <hr>
+  <form class="form-horizontal" action="{% url 'save_profile' %}" method="POST" enctype="multipart/form-data">
+   {% csrf_token %}
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="name">Avatar:</label>
+        <div class="col-sm-10">
+            <div class="row"><div class="col-sm-12"><img id="previewImg" style="width: 200px;height: 200px;" class="img-circle" src="{% static '' %}{{image}}" alt="Placeholder"></div></div>
+            <br>
+            <div class="row"><div class="col-sm-12"><input type="file" class="form-control" name="photo" onchange="previewFile(this);" required></div></div>
+       </div>
+    </div>
+      
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="name">Name:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" value= {{ name }} >
+        </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Email:</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="email" name="name" value={{email}} disabled>
+      </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="mobile" >Mobile No:</label>
+        <div class="col-sm-10">
+            <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="Enter Mobile No." pattern="[0-9]{10}" value={{ phone_no }} required>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="aadhar">Aadhar card No:</label>
+        <div class="col-sm-10">
+            <input type="tel" class="form-control" id="aadhar" name="aadhar" placeholder="Enter Aadhar card No." pattern="[0-9]{12}" value={{ aadhar_no }} required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="profiles">Choose your Profile:</label>
+  
+        <div class="col-sm-10" id="profiles">
+            <label class="radio-inline col-sm-3"><input type="radio" name="opt" value="1"  {% if profile_type|stringformat:"s" == '1' %} checked {% else %} '' {% endif %}>Job-seeker only</label>
+            <label class="radio-inline col-sm-3"><input type="radio" name="opt" value="2"  id="provider_only" {% if profile_type|stringformat:"s" == '2' %} checked {% else %} '' {% endif %}>Job-provider only</label>
+            <label class="radio-inline col-sm-3"><input type="radio" name="opt" value="3"  {% if profile_type|stringformat:"s" == '3' %} checked {% else %} '' {% endif %}>Both</label>
+        </div>
+    </div>
+
+
+    <div class="form-group skills_form" id="skills_form" >
+        <label class="control-label col-sm-2" for="Skills">Choose your skills:</label>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-3"><div class="checkbox"><label><input type="checkbox" name="skill_Carpenter"  {% if "skill_Carpenter" in skills %} checked {% else %} '' {% endif %}>Carpenter</label></div></div>
+                <div class="col-sm-3"><div class="checkbox"><label><input type="checkbox" name="skill_Driver"  {% if "skill_Driver" in skills %} checked {% else %} '' {% endif %}>Driver</label></div></div>
+                <div class="col-sm-3"><div class="checkbox"><label><input type="checkbox" name="skill_Dog Walker"  {% if "skill_Dog Walker" in skills %} checked {% else %} '' {% endif %}>Dog Walker</label></div></div>
+                <div class="col-sm-3"><div class="checkbox"><label><input type="checkbox" name="skill_Washer"  {% if "skill_Washer"  in skills %} checked {% else %} '' {% endif %}>Washer</label></div></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3"><div class="checkbox"><label><input type="checkbox" name="skill_Plumbing"  {% if "skill_Plumbing" in skills %} checked {% else %} '' {% endif %}>Plumbing</label></div></div>
+                <div class="col-sm-3"><div class="checkbox"><label><input type="checkbox" name="skill_House Cleaner"  {% if "skill_House Cleaner" in skills %} checked {% else %} '' {% endif %} >House Cleaner</label></div></div>
+            </div>
+            
+        </div>
+    </div>
+    <br>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

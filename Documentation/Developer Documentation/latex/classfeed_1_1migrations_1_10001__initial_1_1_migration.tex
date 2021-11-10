@@ -1,0 +1,83 @@
+\hypertarget{classfeed_1_1migrations_1_10001__initial_1_1_migration}{}\doxysection{feed.\+migrations.0001\+\_\+initial.\+Migration Class Reference}
+\label{classfeed_1_1migrations_1_10001__initial_1_1_migration}\index{feed.migrations.0001\_initial.Migration@{feed.migrations.0001\_initial.Migration}}
+Inheritance diagram for feed.\+migrations.0001\+\_\+initial.\+Migration\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classfeed_1_1migrations_1_10001__initial_1_1_migration}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classfeed_1_1migrations_1_10001__initial_1_1_migration_ab8d95643ba34e8b3f2de2c7da982be8d}{initial}} = True
+\item 
+list \mbox{\hyperlink{classfeed_1_1migrations_1_10001__initial_1_1_migration_a55c7a11a89e03b59ef141cf52edb2344}{dependencies}}
+\item 
+list \mbox{\hyperlink{classfeed_1_1migrations_1_10001__initial_1_1_migration_a738a6f5a9ef8281a7486a8a521579896}{operations}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classfeed_1_1migrations_1_10001__initial_1_1_migration_a55c7a11a89e03b59ef141cf52edb2344}\label{classfeed_1_1migrations_1_10001__initial_1_1_migration_a55c7a11a89e03b59ef141cf52edb2344}} 
+\index{feed.migrations.0001\_initial.Migration@{feed.migrations.0001\_initial.Migration}!dependencies@{dependencies}}
+\index{dependencies@{dependencies}!feed.migrations.0001\_initial.Migration@{feed.migrations.0001\_initial.Migration}}
+\doxysubsubsection{\texorpdfstring{dependencies}{dependencies}}
+{\footnotesize\ttfamily list feed.\+migrations.\+0001\+\_\+initial.\+Migration.\+dependencies\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  [}
+\DoxyCodeLine{        (\textcolor{stringliteral}{'myprofile'}, \textcolor{stringliteral}{'0002\_auto\_20201111\_1337'}),}
+\DoxyCodeLine{    ]}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classfeed_1_1migrations_1_10001__initial_1_1_migration_ab8d95643ba34e8b3f2de2c7da982be8d}\label{classfeed_1_1migrations_1_10001__initial_1_1_migration_ab8d95643ba34e8b3f2de2c7da982be8d}} 
+\index{feed.migrations.0001\_initial.Migration@{feed.migrations.0001\_initial.Migration}!initial@{initial}}
+\index{initial@{initial}!feed.migrations.0001\_initial.Migration@{feed.migrations.0001\_initial.Migration}}
+\doxysubsubsection{\texorpdfstring{initial}{initial}}
+{\footnotesize\ttfamily bool feed.\+migrations.\+0001\+\_\+initial.\+Migration.\+initial = True\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classfeed_1_1migrations_1_10001__initial_1_1_migration_a738a6f5a9ef8281a7486a8a521579896}\label{classfeed_1_1migrations_1_10001__initial_1_1_migration_a738a6f5a9ef8281a7486a8a521579896}} 
+\index{feed.migrations.0001\_initial.Migration@{feed.migrations.0001\_initial.Migration}!operations@{operations}}
+\index{operations@{operations}!feed.migrations.0001\_initial.Migration@{feed.migrations.0001\_initial.Migration}}
+\doxysubsubsection{\texorpdfstring{operations}{operations}}
+{\footnotesize\ttfamily list feed.\+migrations.\+0001\+\_\+initial.\+Migration.\+operations\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  [}
+\DoxyCodeLine{        migrations.CreateModel(}
+\DoxyCodeLine{            name=\textcolor{stringliteral}{'Job\_details'},}
+\DoxyCodeLine{            fields=[}
+\DoxyCodeLine{                (\textcolor{stringliteral}{'job\_id'}, models.AutoField(primary\_key=\textcolor{keyword}{True}, serialize=\textcolor{keyword}{False})),}
+\DoxyCodeLine{                (\textcolor{stringliteral}{'job\_desc'}, models.TextField(null=\textcolor{keyword}{True})),}
+\DoxyCodeLine{                (\textcolor{stringliteral}{'job\_email'}, models.EmailField(max\_length=254, null=\textcolor{keyword}{True})),}
+\DoxyCodeLine{                (\textcolor{stringliteral}{'phone\_no'}, models.TextField(max\_length=10, null=\textcolor{keyword}{True})),}
+\DoxyCodeLine{                (\textcolor{stringliteral}{'job\_price'}, models.IntegerField(null=\textcolor{keyword}{True})),}
+\DoxyCodeLine{                (\textcolor{stringliteral}{'job\_time'}, models.TimeField(auto\_now=\textcolor{keyword}{True})),}
+\DoxyCodeLine{                (\textcolor{stringliteral}{'job\_date'}, models.DateField(auto\_now=\textcolor{keyword}{True})),}
+\DoxyCodeLine{                (\textcolor{stringliteral}{'job\_latitude'}, models.FloatField(null=\textcolor{keyword}{True})),}
+\DoxyCodeLine{                (\textcolor{stringliteral}{'job\_address'}, models.TextField(null=\textcolor{keyword}{True})),}
+\DoxyCodeLine{                (\textcolor{stringliteral}{'job\_longitude'}, models.FloatField(null=\textcolor{keyword}{True})),}
+\DoxyCodeLine{                (\textcolor{stringliteral}{'job\_skill'}, models.TextField(null=\textcolor{keyword}{True})),}
+\DoxyCodeLine{                (\textcolor{stringliteral}{'job\_distance'}, models.IntegerField(null=\textcolor{keyword}{True})),}
+\DoxyCodeLine{                (\textcolor{stringliteral}{'is\_job\_completed'}, models.BooleanField(default=\textcolor{keyword}{False})),}
+\DoxyCodeLine{            ],}
+\DoxyCodeLine{        ),}
+\DoxyCodeLine{        migrations.CreateModel(}
+\DoxyCodeLine{            name=\textcolor{stringliteral}{'applied\_jobs'},}
+\DoxyCodeLine{            fields=[}
+\DoxyCodeLine{                (\textcolor{stringliteral}{'id'}, models.AutoField(auto\_created=\textcolor{keyword}{True}, primary\_key=\textcolor{keyword}{True}, serialize=\textcolor{keyword}{False}, verbose\_name=\textcolor{stringliteral}{'ID'})),}
+\DoxyCodeLine{                (\textcolor{stringliteral}{'is\_job\_approved'}, models.BooleanField(default=\textcolor{keyword}{False})),}
+\DoxyCodeLine{                (\textcolor{stringliteral}{'job\_id'}, models.ForeignKey(on\_delete=django.db.models.deletion.CASCADE, to=\textcolor{stringliteral}{'feed.job\_details'})),}
+\DoxyCodeLine{                (\textcolor{stringliteral}{'user\_id'}, models.ForeignKey(on\_delete=django.db.models.deletion.CASCADE, to=\textcolor{stringliteral}{'myprofile.profile\_details'})),}
+\DoxyCodeLine{            ],}
+\DoxyCodeLine{        ),}
+\DoxyCodeLine{    ]}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Study\+\_\+only/\+I\+I\+T\+B/\+N\+V\+J\+F/feed/migrations/\mbox{\hyperlink{feed_2migrations_20001__initial_8py}{0001\+\_\+initial.\+py}}\end{DoxyCompactItemize}

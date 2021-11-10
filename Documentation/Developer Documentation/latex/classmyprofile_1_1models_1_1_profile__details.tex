@@ -1,0 +1,108 @@
+\hypertarget{classmyprofile_1_1models_1_1_profile__details}{}\doxysection{myprofile.\+models.\+Profile\+\_\+details Class Reference}
+\label{classmyprofile_1_1models_1_1_profile__details}\index{myprofile.models.Profile\_details@{myprofile.models.Profile\_details}}
+
+
+This class is used to create the \mbox{\hyperlink{classmyprofile_1_1models_1_1_profile__details}{Profile\+\_\+details}} table.  
+
+
+Inheritance diagram for myprofile.\+models.\+Profile\+\_\+details\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmyprofile_1_1models_1_1_profile__details}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmyprofile_1_1models_1_1_profile__details_a228f0dc43bc6ee5dcfa0738eb18d5a9a}{user\+\_\+id}} = models.\+Text\+Field(primary\+\_\+key=True)
+\item 
+\mbox{\hyperlink{classmyprofile_1_1models_1_1_profile__details_a95241c270da17d5286cdd9d4c239d7a5}{name}} = models.\+Text\+Field(blank=False, null=True)
+\item 
+\mbox{\hyperlink{classmyprofile_1_1models_1_1_profile__details_aee6bf50d2ee6b2b66ab9d47ac7d38db2}{email}} = models.\+Email\+Field()
+\item 
+\mbox{\hyperlink{classmyprofile_1_1models_1_1_profile__details_aafd64f5d6fd76ccdd7fcc1bbe4651439}{image}} = models.\+Image\+Field(upload\+\_\+to=\textquotesingle{}profile\+\_\+pics/\textquotesingle{})
+\item 
+\mbox{\hyperlink{classmyprofile_1_1models_1_1_profile__details_a5c203fe3651f7676bebae42fc3b6ed07}{phone\+\_\+no}} = models.\+Text\+Field(max\+\_\+length=10)
+\item 
+\mbox{\hyperlink{classmyprofile_1_1models_1_1_profile__details_aa60414c6e358fd2e09fc45417c36157d}{aadhar\+\_\+no}} = models.\+Text\+Field(max\+\_\+length=12)
+\item 
+tuple \mbox{\hyperlink{classmyprofile_1_1models_1_1_profile__details_a63b09128a0c4713ba763921c2531b7c8}{choices}}
+\item 
+\mbox{\hyperlink{classmyprofile_1_1models_1_1_profile__details_ad76a729be4c1964b51d2ed95bcf364bb}{profile\+\_\+type}} = models.\+Char\+Field(max\+\_\+length=1, \mbox{\hyperlink{classmyprofile_1_1models_1_1_profile__details_a63b09128a0c4713ba763921c2531b7c8}{choices}}=\mbox{\hyperlink{classmyprofile_1_1models_1_1_profile__details_a63b09128a0c4713ba763921c2531b7c8}{choices}})
+\item 
+\mbox{\hyperlink{classmyprofile_1_1models_1_1_profile__details_aa7522d96428db8296afec75c97d7e2ed}{skills}} = models.\+Text\+Field(blank=False, null=True)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is used to create the \mbox{\hyperlink{classmyprofile_1_1models_1_1_profile__details}{Profile\+\_\+details}} table. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classmyprofile_1_1models_1_1_profile__details_aa60414c6e358fd2e09fc45417c36157d}\label{classmyprofile_1_1models_1_1_profile__details_aa60414c6e358fd2e09fc45417c36157d}} 
+\index{myprofile.models.Profile\_details@{myprofile.models.Profile\_details}!aadhar\_no@{aadhar\_no}}
+\index{aadhar\_no@{aadhar\_no}!myprofile.models.Profile\_details@{myprofile.models.Profile\_details}}
+\doxysubsubsection{\texorpdfstring{aadhar\_no}{aadhar\_no}}
+{\footnotesize\ttfamily myprofile.\+models.\+Profile\+\_\+details.\+aadhar\+\_\+no = models.\+Text\+Field(max\+\_\+length=12)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmyprofile_1_1models_1_1_profile__details_a63b09128a0c4713ba763921c2531b7c8}\label{classmyprofile_1_1models_1_1_profile__details_a63b09128a0c4713ba763921c2531b7c8}} 
+\index{myprofile.models.Profile\_details@{myprofile.models.Profile\_details}!choices@{choices}}
+\index{choices@{choices}!myprofile.models.Profile\_details@{myprofile.models.Profile\_details}}
+\doxysubsubsection{\texorpdfstring{choices}{choices}}
+{\footnotesize\ttfamily tuple myprofile.\+models.\+Profile\+\_\+details.\+choices\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  (}
+\DoxyCodeLine{        (\textcolor{stringliteral}{'1'}, \textcolor{stringliteral}{'Job-\/seeker only'}),}
+\DoxyCodeLine{        (\textcolor{stringliteral}{'2'}, \textcolor{stringliteral}{'Job-\/provider only'}),}
+\DoxyCodeLine{        (\textcolor{stringliteral}{'3'},\textcolor{stringliteral}{'both'})}
+\DoxyCodeLine{    )}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classmyprofile_1_1models_1_1_profile__details_aee6bf50d2ee6b2b66ab9d47ac7d38db2}\label{classmyprofile_1_1models_1_1_profile__details_aee6bf50d2ee6b2b66ab9d47ac7d38db2}} 
+\index{myprofile.models.Profile\_details@{myprofile.models.Profile\_details}!email@{email}}
+\index{email@{email}!myprofile.models.Profile\_details@{myprofile.models.Profile\_details}}
+\doxysubsubsection{\texorpdfstring{email}{email}}
+{\footnotesize\ttfamily myprofile.\+models.\+Profile\+\_\+details.\+email = models.\+Email\+Field()\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmyprofile_1_1models_1_1_profile__details_aafd64f5d6fd76ccdd7fcc1bbe4651439}\label{classmyprofile_1_1models_1_1_profile__details_aafd64f5d6fd76ccdd7fcc1bbe4651439}} 
+\index{myprofile.models.Profile\_details@{myprofile.models.Profile\_details}!image@{image}}
+\index{image@{image}!myprofile.models.Profile\_details@{myprofile.models.Profile\_details}}
+\doxysubsubsection{\texorpdfstring{image}{image}}
+{\footnotesize\ttfamily myprofile.\+models.\+Profile\+\_\+details.\+image = models.\+Image\+Field(upload\+\_\+to=\textquotesingle{}profile\+\_\+pics/\textquotesingle{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmyprofile_1_1models_1_1_profile__details_a95241c270da17d5286cdd9d4c239d7a5}\label{classmyprofile_1_1models_1_1_profile__details_a95241c270da17d5286cdd9d4c239d7a5}} 
+\index{myprofile.models.Profile\_details@{myprofile.models.Profile\_details}!name@{name}}
+\index{name@{name}!myprofile.models.Profile\_details@{myprofile.models.Profile\_details}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily myprofile.\+models.\+Profile\+\_\+details.\+name = models.\+Text\+Field(blank=False, null=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmyprofile_1_1models_1_1_profile__details_a5c203fe3651f7676bebae42fc3b6ed07}\label{classmyprofile_1_1models_1_1_profile__details_a5c203fe3651f7676bebae42fc3b6ed07}} 
+\index{myprofile.models.Profile\_details@{myprofile.models.Profile\_details}!phone\_no@{phone\_no}}
+\index{phone\_no@{phone\_no}!myprofile.models.Profile\_details@{myprofile.models.Profile\_details}}
+\doxysubsubsection{\texorpdfstring{phone\_no}{phone\_no}}
+{\footnotesize\ttfamily myprofile.\+models.\+Profile\+\_\+details.\+phone\+\_\+no = models.\+Text\+Field(max\+\_\+length=10)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmyprofile_1_1models_1_1_profile__details_ad76a729be4c1964b51d2ed95bcf364bb}\label{classmyprofile_1_1models_1_1_profile__details_ad76a729be4c1964b51d2ed95bcf364bb}} 
+\index{myprofile.models.Profile\_details@{myprofile.models.Profile\_details}!profile\_type@{profile\_type}}
+\index{profile\_type@{profile\_type}!myprofile.models.Profile\_details@{myprofile.models.Profile\_details}}
+\doxysubsubsection{\texorpdfstring{profile\_type}{profile\_type}}
+{\footnotesize\ttfamily myprofile.\+models.\+Profile\+\_\+details.\+profile\+\_\+type = models.\+Char\+Field(max\+\_\+length=1, \mbox{\hyperlink{classmyprofile_1_1models_1_1_profile__details_a63b09128a0c4713ba763921c2531b7c8}{choices}}=\mbox{\hyperlink{classmyprofile_1_1models_1_1_profile__details_a63b09128a0c4713ba763921c2531b7c8}{choices}})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmyprofile_1_1models_1_1_profile__details_aa7522d96428db8296afec75c97d7e2ed}\label{classmyprofile_1_1models_1_1_profile__details_aa7522d96428db8296afec75c97d7e2ed}} 
+\index{myprofile.models.Profile\_details@{myprofile.models.Profile\_details}!skills@{skills}}
+\index{skills@{skills}!myprofile.models.Profile\_details@{myprofile.models.Profile\_details}}
+\doxysubsubsection{\texorpdfstring{skills}{skills}}
+{\footnotesize\ttfamily myprofile.\+models.\+Profile\+\_\+details.\+skills = models.\+Text\+Field(blank=False, null=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmyprofile_1_1models_1_1_profile__details_a228f0dc43bc6ee5dcfa0738eb18d5a9a}\label{classmyprofile_1_1models_1_1_profile__details_a228f0dc43bc6ee5dcfa0738eb18d5a9a}} 
+\index{myprofile.models.Profile\_details@{myprofile.models.Profile\_details}!user\_id@{user\_id}}
+\index{user\_id@{user\_id}!myprofile.models.Profile\_details@{myprofile.models.Profile\_details}}
+\doxysubsubsection{\texorpdfstring{user\_id}{user\_id}}
+{\footnotesize\ttfamily myprofile.\+models.\+Profile\+\_\+details.\+user\+\_\+id = models.\+Text\+Field(primary\+\_\+key=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Study\+\_\+only/\+I\+I\+T\+B/\+N\+V\+J\+F/myprofile/\mbox{\hyperlink{myprofile_2models_8py}{models.\+py}}\end{DoxyCompactItemize}

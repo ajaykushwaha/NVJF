@@ -1,0 +1,43 @@
+ {% for i in jobs %}
+    <div class="row">
+        <div class="col-sm-12">
+        <div class="well" style="padding-bottom: 4px;">
+            <div class="row">
+            <div class="col-sm-3 label label-success" style="font-size: larger;">When : {{i.job_date}},{{i.job_time}}</div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-2  label" style="font-size: larger;">
+                    <div class="row label-danger">Money : {{i.job_price}}</div>
+                </div>
+                <div class="col-sm-7" style="padding: 3%;">
+                    {{i.job_desc}}
+                </div>
+                <div class="col-sm-3" style="padding: 3%;">
+                          <div class="row">
+                          <form action="{% url 'show_job_responses' %}" method="post" >
+                            {% csrf_token %}
+                              <input type="text" value={{i.job_id}} name="job_id" style="display: none">
+                              <input type="submit"  class="btn btn-primary" style="width: 100%;height: 100%;" value="View Responses">
+                          </form>
+                        </div>
+                        <div class="row">
+                            <br>
+                            {% if i.is_job_completed == False %}
+                            <input id="{{i.job_id}}" type="button"  class="btn btn-primary" style="width: 100%;height: 100%;" value="Mark job as Completed ?" onclick="marksASCompleted(this.id)" >
+                            {% else %}
+                            <input id="{{i.job_id}}" type="button"  class="btn btn-success" style="width: 100%;height: 100%;" value="Job Completed" onclick="marksASCompleted(this.id)">
+                            {% endif %}
+                          </div>
+                        </div>
+            </div>
+            <div class="row">
+            <div class="col-sm-12  label label-warning" style="font-size: inherit;">
+                {{i.job_address}}
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+ {% endfor %}   

@@ -1,0 +1,173 @@
+{% extends "nav.html" %}
+
+{% block content %}
+
+<script>
+    $(window).on('load', function() {
+    var URL = "{% url 'feed_update' %}";
+    var slider = document.getElementById("price");
+    var output = document.getElementById("output");
+    output.innerHTML = slider.value;
+
+    
+    
+    
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+      var data = {'price': this.value};
+      $.ajaxSetup({
+            data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+        });
+      $.post(URL, data,function( data ) {
+  $( "#feed_response" ).html( data );
+});
+
+    }
+
+  })
+
+function myfunc(type) {
+              
+              var URL = "{% url 'feed_update' %}";
+              var data = {'skill': type};
+              $.ajaxSetup({
+            data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+        });
+              $.post(URL, data,function( data ) {
+              $( "#feed_response" ).html( data );
+
+              
+
+    });
+    
+  }
+
+function myinput(text) {
+
+
+            var URL = "{% url 'feed_update' %}";
+            var data = {'text': text};
+              $.ajaxSetup({
+            data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+        });
+          $.post(URL, data,function( data ) {
+              $( "#feed_response" ).html( data );
+              });
+
+            
+
+
+}
+
+
+function myjob(job_id)
+{
+   var URL = "{% url 'save_applied' %}";
+   var data ={'job_id':job_id};
+   $.ajaxSetup({
+            data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+        });
+          $.post(URL, data,function( data ) {
+              
+              });
+
+       $(id).attr("class","btn btn-danger");
+       $(id).text("Applied");
+       
+}
+    </script>
+
+
+
+
+{% load static %}
+
+<div class="container text-center">    
+  <div class="row">
+    <div class="col-sm-3 well">
+      <div class="well">
+        <img src="{% static '' %}{{profile_image}}" class="img-circle" height="65" width="65" alt="Avatar">
+      </div>
+      <div class="well">
+        <p>Filter by titles</p>
+        <p>
+          <span id="Carpentry" class="label label-default" onclick="myfunc(this.id)">Carpentry</span>
+          <span id="Plumbing" class="label label-default" onclick="myfunc(this.id)">Plumbing</span>
+          <span id="Washer" class="label label-default" onclick="myfunc(this.id)">Washer</span>
+          <span id="Driver" class="label label-default" onclick="myfunc(this.id)">Driver</span>
+          <span id="Dog walker" class="label label-default" onclick="myfunc(this.id)">Dog walker</span>
+          <span id="House Cleaner" class="label label-default" onclick="myfunc(this.id)">House Cleaner</span>
+        </p>
+      </div>
+      <div class="well">
+        <p>Filter by Money</p>
+        <input type="range" min="0" max="10000" value="5000" id="price" >
+        <p id="output"></p>
+      </div>
+      
+    </div>
+    <div class="col-sm-9">
+    
+      <div class="row">
+        <div class="col-sm-12">
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group input-group">
+                  <input type="text" class="form-control" placeholder="Search.." oninput="myinput(this.value)">
+                  <!--<span class="input-group-btn"> 
+                    <button class="btn btn-default" type="button">
+                      <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                  </span>     -->   
+                </div>
+              </form>
+        </div>
+      </div>
+      <div id="feed_response">
+          {% for i in details %}
+      <div class="row">
+          <div class="col-sm-12">
+            <div class="well" style="padding-bottom: 4px;">
+              <div class="row">
+                <div class="col-sm-3 label label-success" style="font-size: larger;"> {{i.job_date}},{{i.job_time}}</div>
+              </div>
+
+              <div class="row">
+
+                  <div class="col-sm-2  label" style="font-size: larger;">
+                      <div class="row label-danger">Price:{{i.job_price}}</div>
+                  </div>
+                  <div class="col-sm-8" style="padding: 3%;">
+                      {{i.job_desc}}
+                  </div>
+                  <div class="col-sm-2"  style="padding: 3%;">
+                    <form action="{% url 'job_info' %}" method="post" >
+                      {% csrf_token %}
+                        <input type="text" value={{i.job_id}} name="job_id" style="display: none">
+                        <input type="submit"  class="btn btn-primary" style="width: 100%;height: 100%;" value="View More">
+                      </form>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12  label label-warning" style="font-size: inherit;">
+                  {{i.job_address}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+        
+        
+              
+
+       
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+

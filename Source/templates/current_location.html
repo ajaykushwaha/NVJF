@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<br><br><br><br><br>
+<p>Click on the allow button to recieve Job Feed sorted with your current location</p>
+
+<p id="Notif"></p>
+
+<form method="post" action="/feed/" id="submit_long_lang">
+{% csrf_token %}
+<input type="text" id="latitude" name="latitude" style="display: none;">
+<input type="tel"  id="longitude" name="longitude" style="display: none;">
+</form>
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+
+<script>
+$( document ).ready(function() {
+  getLocation() 
+});
+
+function getLocation() {
+
+  var x = document.getElementById("Notif");
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(postPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function postPosition(position) {
+  
+  $('#latitude').val(position.coords.latitude);
+  $('#longitude').val(position.coords.longitude);
+  $('#submit_long_lang').submit();
+}
+
+</script>
+
+</body>
+</html>

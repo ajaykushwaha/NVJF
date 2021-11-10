@@ -1,0 +1,139 @@
+\hypertarget{classfeed_1_1models_1_1_job__details}{}\doxysection{feed.\+models.\+Job\+\_\+details Class Reference}
+\label{classfeed_1_1models_1_1_job__details}\index{feed.models.Job\_details@{feed.models.Job\_details}}
+
+
+This class is used to create the \mbox{\hyperlink{classfeed_1_1models_1_1_job__details}{Job\+\_\+details}} table.  
+
+
+Inheritance diagram for feed.\+models.\+Job\+\_\+details\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classfeed_1_1models_1_1_job__details}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classfeed_1_1models_1_1_job__details_a0363928042b35dd0aa59da6f14b8e06e}{job\+\_\+id}} = models.\+Auto\+Field(primary\+\_\+key=True)
+\item 
+\mbox{\hyperlink{classfeed_1_1models_1_1_job__details_aed3c43c0a01642e69a4b9604fde1a4a4}{job\+\_\+desc}} = models.\+Text\+Field(blank=False, null=True)
+\item 
+\mbox{\hyperlink{classfeed_1_1models_1_1_job__details_a2447f84b1da4817f6d0a3838cc683cd4}{job\+\_\+email}} = models.\+Email\+Field(null=True)
+\item 
+\mbox{\hyperlink{classfeed_1_1models_1_1_job__details_a930b246fffc12419bad0982d2bb80144}{phone\+\_\+no}} = models.\+Text\+Field(max\+\_\+length=10,null=True)
+\item 
+\mbox{\hyperlink{classfeed_1_1models_1_1_job__details_a02227e5e9abb9fe682193711fc6fb746}{job\+\_\+price}} = models.\+Integer\+Field(null=True)
+\item 
+\mbox{\hyperlink{classfeed_1_1models_1_1_job__details_a0285dcac9ec1c1f79d31801b0ddf3fa4}{job\+\_\+time}} = models.\+Time\+Field(auto\+\_\+now=False)
+\item 
+\mbox{\hyperlink{classfeed_1_1models_1_1_job__details_ad86691d3edb800d0834c2e583be74d46}{job\+\_\+date}} = models.\+Date\+Field(auto\+\_\+now=False)
+\item 
+\mbox{\hyperlink{classfeed_1_1models_1_1_job__details_a601042760c4fda0cb7b421b223e08910}{job\+\_\+latitude}} = models.\+Float\+Field(null=True)
+\item 
+\mbox{\hyperlink{classfeed_1_1models_1_1_job__details_a86a60bf4d3e8111f8cd4a514a44d1987}{job\+\_\+address}} = models.\+Text\+Field(blank=False, null=True)
+\item 
+\mbox{\hyperlink{classfeed_1_1models_1_1_job__details_a6895ddd98107df51cb3da1dbfb11150e}{job\+\_\+longitude}} = models.\+Float\+Field(null=True)
+\item 
+\mbox{\hyperlink{classfeed_1_1models_1_1_job__details_ab6f482509deaec953c6980563245589f}{job\+\_\+skill}} = models.\+Text\+Field(blank=False, null=True)
+\item 
+\mbox{\hyperlink{classfeed_1_1models_1_1_job__details_a38f80234b6bb133f47a81ffd24017923}{job\+\_\+distance}} = models.\+Integer\+Field(null=True)
+\item 
+\mbox{\hyperlink{classfeed_1_1models_1_1_job__details_a3e90092928c8ab50b89ebb8ac9b5b204}{is\+\_\+job\+\_\+completed}} = models.\+Boolean\+Field(default=False)
+\item 
+\mbox{\hyperlink{classfeed_1_1models_1_1_job__details_ac6fcb0814ee74b194b9ddf119d12e934}{image}} = models.\+Text\+Field(blank=False, null=True)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is used to create the \mbox{\hyperlink{classfeed_1_1models_1_1_job__details}{Job\+\_\+details}} table. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classfeed_1_1models_1_1_job__details_ac6fcb0814ee74b194b9ddf119d12e934}\label{classfeed_1_1models_1_1_job__details_ac6fcb0814ee74b194b9ddf119d12e934}} 
+\index{feed.models.Job\_details@{feed.models.Job\_details}!image@{image}}
+\index{image@{image}!feed.models.Job\_details@{feed.models.Job\_details}}
+\doxysubsubsection{\texorpdfstring{image}{image}}
+{\footnotesize\ttfamily feed.\+models.\+Job\+\_\+details.\+image = models.\+Text\+Field(blank=False, null=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classfeed_1_1models_1_1_job__details_a3e90092928c8ab50b89ebb8ac9b5b204}\label{classfeed_1_1models_1_1_job__details_a3e90092928c8ab50b89ebb8ac9b5b204}} 
+\index{feed.models.Job\_details@{feed.models.Job\_details}!is\_job\_completed@{is\_job\_completed}}
+\index{is\_job\_completed@{is\_job\_completed}!feed.models.Job\_details@{feed.models.Job\_details}}
+\doxysubsubsection{\texorpdfstring{is\_job\_completed}{is\_job\_completed}}
+{\footnotesize\ttfamily feed.\+models.\+Job\+\_\+details.\+is\+\_\+job\+\_\+completed = models.\+Boolean\+Field(default=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classfeed_1_1models_1_1_job__details_a86a60bf4d3e8111f8cd4a514a44d1987}\label{classfeed_1_1models_1_1_job__details_a86a60bf4d3e8111f8cd4a514a44d1987}} 
+\index{feed.models.Job\_details@{feed.models.Job\_details}!job\_address@{job\_address}}
+\index{job\_address@{job\_address}!feed.models.Job\_details@{feed.models.Job\_details}}
+\doxysubsubsection{\texorpdfstring{job\_address}{job\_address}}
+{\footnotesize\ttfamily feed.\+models.\+Job\+\_\+details.\+job\+\_\+address = models.\+Text\+Field(blank=False, null=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classfeed_1_1models_1_1_job__details_ad86691d3edb800d0834c2e583be74d46}\label{classfeed_1_1models_1_1_job__details_ad86691d3edb800d0834c2e583be74d46}} 
+\index{feed.models.Job\_details@{feed.models.Job\_details}!job\_date@{job\_date}}
+\index{job\_date@{job\_date}!feed.models.Job\_details@{feed.models.Job\_details}}
+\doxysubsubsection{\texorpdfstring{job\_date}{job\_date}}
+{\footnotesize\ttfamily feed.\+models.\+Job\+\_\+details.\+job\+\_\+date = models.\+Date\+Field(auto\+\_\+now=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classfeed_1_1models_1_1_job__details_aed3c43c0a01642e69a4b9604fde1a4a4}\label{classfeed_1_1models_1_1_job__details_aed3c43c0a01642e69a4b9604fde1a4a4}} 
+\index{feed.models.Job\_details@{feed.models.Job\_details}!job\_desc@{job\_desc}}
+\index{job\_desc@{job\_desc}!feed.models.Job\_details@{feed.models.Job\_details}}
+\doxysubsubsection{\texorpdfstring{job\_desc}{job\_desc}}
+{\footnotesize\ttfamily feed.\+models.\+Job\+\_\+details.\+job\+\_\+desc = models.\+Text\+Field(blank=False, null=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classfeed_1_1models_1_1_job__details_a38f80234b6bb133f47a81ffd24017923}\label{classfeed_1_1models_1_1_job__details_a38f80234b6bb133f47a81ffd24017923}} 
+\index{feed.models.Job\_details@{feed.models.Job\_details}!job\_distance@{job\_distance}}
+\index{job\_distance@{job\_distance}!feed.models.Job\_details@{feed.models.Job\_details}}
+\doxysubsubsection{\texorpdfstring{job\_distance}{job\_distance}}
+{\footnotesize\ttfamily feed.\+models.\+Job\+\_\+details.\+job\+\_\+distance = models.\+Integer\+Field(null=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classfeed_1_1models_1_1_job__details_a2447f84b1da4817f6d0a3838cc683cd4}\label{classfeed_1_1models_1_1_job__details_a2447f84b1da4817f6d0a3838cc683cd4}} 
+\index{feed.models.Job\_details@{feed.models.Job\_details}!job\_email@{job\_email}}
+\index{job\_email@{job\_email}!feed.models.Job\_details@{feed.models.Job\_details}}
+\doxysubsubsection{\texorpdfstring{job\_email}{job\_email}}
+{\footnotesize\ttfamily feed.\+models.\+Job\+\_\+details.\+job\+\_\+email = models.\+Email\+Field(null=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classfeed_1_1models_1_1_job__details_a0363928042b35dd0aa59da6f14b8e06e}\label{classfeed_1_1models_1_1_job__details_a0363928042b35dd0aa59da6f14b8e06e}} 
+\index{feed.models.Job\_details@{feed.models.Job\_details}!job\_id@{job\_id}}
+\index{job\_id@{job\_id}!feed.models.Job\_details@{feed.models.Job\_details}}
+\doxysubsubsection{\texorpdfstring{job\_id}{job\_id}}
+{\footnotesize\ttfamily feed.\+models.\+Job\+\_\+details.\+job\+\_\+id = models.\+Auto\+Field(primary\+\_\+key=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classfeed_1_1models_1_1_job__details_a601042760c4fda0cb7b421b223e08910}\label{classfeed_1_1models_1_1_job__details_a601042760c4fda0cb7b421b223e08910}} 
+\index{feed.models.Job\_details@{feed.models.Job\_details}!job\_latitude@{job\_latitude}}
+\index{job\_latitude@{job\_latitude}!feed.models.Job\_details@{feed.models.Job\_details}}
+\doxysubsubsection{\texorpdfstring{job\_latitude}{job\_latitude}}
+{\footnotesize\ttfamily feed.\+models.\+Job\+\_\+details.\+job\+\_\+latitude = models.\+Float\+Field(null=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classfeed_1_1models_1_1_job__details_a6895ddd98107df51cb3da1dbfb11150e}\label{classfeed_1_1models_1_1_job__details_a6895ddd98107df51cb3da1dbfb11150e}} 
+\index{feed.models.Job\_details@{feed.models.Job\_details}!job\_longitude@{job\_longitude}}
+\index{job\_longitude@{job\_longitude}!feed.models.Job\_details@{feed.models.Job\_details}}
+\doxysubsubsection{\texorpdfstring{job\_longitude}{job\_longitude}}
+{\footnotesize\ttfamily feed.\+models.\+Job\+\_\+details.\+job\+\_\+longitude = models.\+Float\+Field(null=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classfeed_1_1models_1_1_job__details_a02227e5e9abb9fe682193711fc6fb746}\label{classfeed_1_1models_1_1_job__details_a02227e5e9abb9fe682193711fc6fb746}} 
+\index{feed.models.Job\_details@{feed.models.Job\_details}!job\_price@{job\_price}}
+\index{job\_price@{job\_price}!feed.models.Job\_details@{feed.models.Job\_details}}
+\doxysubsubsection{\texorpdfstring{job\_price}{job\_price}}
+{\footnotesize\ttfamily feed.\+models.\+Job\+\_\+details.\+job\+\_\+price = models.\+Integer\+Field(null=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classfeed_1_1models_1_1_job__details_ab6f482509deaec953c6980563245589f}\label{classfeed_1_1models_1_1_job__details_ab6f482509deaec953c6980563245589f}} 
+\index{feed.models.Job\_details@{feed.models.Job\_details}!job\_skill@{job\_skill}}
+\index{job\_skill@{job\_skill}!feed.models.Job\_details@{feed.models.Job\_details}}
+\doxysubsubsection{\texorpdfstring{job\_skill}{job\_skill}}
+{\footnotesize\ttfamily feed.\+models.\+Job\+\_\+details.\+job\+\_\+skill = models.\+Text\+Field(blank=False, null=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classfeed_1_1models_1_1_job__details_a0285dcac9ec1c1f79d31801b0ddf3fa4}\label{classfeed_1_1models_1_1_job__details_a0285dcac9ec1c1f79d31801b0ddf3fa4}} 
+\index{feed.models.Job\_details@{feed.models.Job\_details}!job\_time@{job\_time}}
+\index{job\_time@{job\_time}!feed.models.Job\_details@{feed.models.Job\_details}}
+\doxysubsubsection{\texorpdfstring{job\_time}{job\_time}}
+{\footnotesize\ttfamily feed.\+models.\+Job\+\_\+details.\+job\+\_\+time = models.\+Time\+Field(auto\+\_\+now=False)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classfeed_1_1models_1_1_job__details_a930b246fffc12419bad0982d2bb80144}\label{classfeed_1_1models_1_1_job__details_a930b246fffc12419bad0982d2bb80144}} 
+\index{feed.models.Job\_details@{feed.models.Job\_details}!phone\_no@{phone\_no}}
+\index{phone\_no@{phone\_no}!feed.models.Job\_details@{feed.models.Job\_details}}
+\doxysubsubsection{\texorpdfstring{phone\_no}{phone\_no}}
+{\footnotesize\ttfamily feed.\+models.\+Job\+\_\+details.\+phone\+\_\+no = models.\+Text\+Field(max\+\_\+length=10,null=True)\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Study\+\_\+only/\+I\+I\+T\+B/\+N\+V\+J\+F/feed/\mbox{\hyperlink{feed_2models_8py}{models.\+py}}\end{DoxyCompactItemize}

@@ -1,0 +1,33 @@
+\hypertarget{namespacesign__in_1_1views}{}\doxysection{sign\+\_\+in.\+views Namespace Reference}
+\label{namespacesign__in_1_1views}\index{sign\_in.views@{sign\_in.views}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacesign__in_1_1views_a427ada7f12dcdfacfc2f972f4b2f123a}{index}} (request)
+\begin{DoxyCompactList}\small\item\em This function directs user to log-\/in ,if user isn\textquotesingle{}t logged in.\+Otherwise directs user to main page. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacesign__in_1_1views_a82ce45b7b7d07f96b8b83d26f611f633}{new\+\_\+view}} (request)
+\begin{DoxyCompactList}\small\item\em This function dircts user to create a profile ,if user doesn\textquotesingle{}t exist in our database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacesign__in_1_1views_a427ada7f12dcdfacfc2f972f4b2f123a}\label{namespacesign__in_1_1views_a427ada7f12dcdfacfc2f972f4b2f123a}} 
+\index{sign\_in.views@{sign\_in.views}!index@{index}}
+\index{index@{index}!sign\_in.views@{sign\_in.views}}
+\doxysubsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily def sign\+\_\+in.\+views.\+index (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+This function directs user to log-\/in ,if user isn\textquotesingle{}t logged in.\+Otherwise directs user to main page. 
+
+We check if a user session is created and depending on it direct user to appropriate page. \mbox{\Hypertarget{namespacesign__in_1_1views_a82ce45b7b7d07f96b8b83d26f611f633}\label{namespacesign__in_1_1views_a82ce45b7b7d07f96b8b83d26f611f633}} 
+\index{sign\_in.views@{sign\_in.views}!new\_view@{new\_view}}
+\index{new\_view@{new\_view}!sign\_in.views@{sign\_in.views}}
+\doxysubsubsection{\texorpdfstring{new\_view()}{new\_view()}}
+{\footnotesize\ttfamily def sign\+\_\+in.\+views.\+new\+\_\+view (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+This function dircts user to create a profile ,if user doesn\textquotesingle{}t exist in our database. 
+
+We are checking on basis of google signed-\/in email, if the user email exists in our database. If user exists in our database we direct him to mainpage. Else we redirect him to create a new profile. 

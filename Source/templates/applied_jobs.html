@@ -1,0 +1,151 @@
+{% extends "nav.html" %}
+
+{% block content %}
+
+  <style>
+
+    .row.content {height: 100vh;}
+    
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+  </style>
+<!-- ajax script to send request -->
+<script>
+
+
+
+function sendReqFunc(id) {
+          
+            $("#seeker_nav li").removeClass("active");
+
+            $("#"+id).addClass("active");
+
+            var URL = "{% url 'applied_job_update' %}";
+            var data = {'id': id};
+            $.ajaxSetup({
+          data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+         });
+            $.post(URL, data,function( data ) {
+            $( "#applied_job_response" ).html( data );
+          
+          });
+          
+        
+}
+
+function delete_job_func(job_id) {
+
+          if (confirm('Are you sure you want to delete this applied job')) {
+    
+   
+          
+          var URL = "{% url 'delete_applied_job' %}";
+          var data = {'job_id': job_id};
+          $.ajaxSetup({
+        data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+       });
+          $.post(URL, data,function( data ) {
+          $( "#applied_job_response" ).html( data );
+        
+        });
+        
+        }
+      
+}
+
+
+
+function myjob(job_id)
+{
+ var URL = "{% url 'save_applied' %}";
+ var data ={'job_id':job_id};
+ $.ajaxSetup({
+          data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+      });
+        $.post(URL, data,function( data ) {
+            
+            });
+
+     $(id).attr("class","btn btn-danger");
+     $(id).text("Applied");
+     
+}
+
+
+
+  </script>
+
+
+
+
+
+
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <br>
+      <h2>Applied Jobs:</h2>
+      <ul class="nav nav-pills nav-stacked" id="seeker_nav">
+        <li class="active" id="approved_jobs" onclick="sendReqFunc(this.id)"><a  >Approved Jobs</a></li>
+        <li id="current_approval_awaiting_jobs"  onclick="sendReqFunc(this.id)" ><a  >Current Approval Awaiting Jobs</a></li>
+        <li id="past_approved_jobs"  onclick="sendReqFunc(this.id)"><a   >Past Approved Jobs</a></li>
+        <li id="past_not_responded_jobs"  onclick="sendReqFunc(this.id)"><a >Past Not responded Jobs</a></li>
+      </ul><br>
+    </div>
+
+    
+    
+      <div class="col-sm-9">
+        <div class="row">
+          <br><br><br>
+      </div>
+      
+      <div id="applied_job_response">
+            {% for i in jobs %}
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="well" style="padding-bottom: 4px;">
+                        <div class="row">
+                            <div class="col-sm-3 label label-success" style="font-size: larger;">When : {{i.job_id.job_date}},{{i.job_id.job_time}}</div>
+                        </div>
+            
+                        <div class="row">
+            
+                              <div class="col-sm-2  label" style="font-size: larger;">
+                                  <div class="row label-danger">Money : {{i.job_price}}</div>
+                              </div>
+                              <div class="col-sm-8" style="padding: 3%;">
+                                  {{i.job_id.job_desc}}
+                              </div>
+                              <div class="col-sm-2" style="padding: 3%;">
+                                  <button type="button" id="{{ i.job_id.job_id }}" class="btn btn-primary" style="width: 100%;height: 100%; "onclick="delete_job_func( {{ i.job_id.job_id }} )">Delete</button>
+                              </div>
+                        </div>
+                        <div class="row">
+                              <div class="col-sm-12  label label-warning" style="font-size: inherit;">
+                                  {{i.job_id.job_address}}
+                              </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+          {% endfor %}
+    
+    
+    
+    
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+
+
+

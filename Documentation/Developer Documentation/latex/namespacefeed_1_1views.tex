@@ -1,0 +1,235 @@
+\hypertarget{namespacefeed_1_1views}{}\doxysection{feed.\+views Namespace Reference}
+\label{namespacefeed_1_1views}\index{feed.views@{feed.views}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacefeed_1_1views_af773e058f670ced9d8490c502ac706ea}{feed}} (request)
+\begin{DoxyCompactList}\small\item\em This function is used genrating new Job feed for the user. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeed_1_1views_a1a968211a2d68e2560fda0fdc04bd4e7}{feed\+\_\+update}} (request)
+\begin{DoxyCompactList}\small\item\em This function is used updating and filtering new Job feed for the user. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeed_1_1views_a5310a2df72dd1dd7dad65e1b04f5a854}{post\+\_\+job}} (request)
+\begin{DoxyCompactList}\small\item\em This function is used displaying a page that job provider uses to add job. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeed_1_1views_a71b3d194dc0441138481702c26901502}{submit\+\_\+job}} (request)
+\begin{DoxyCompactList}\small\item\em This function is used store the job data in databse, recieved from the job provider. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeed_1_1views_acc44d87525898414f623e367dbb468c9}{job\+\_\+info}} (request)
+\begin{DoxyCompactList}\small\item\em This function is used to display the job posted by job provider. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeed_1_1views_aee8789d262e18dbed697d55f72af39cc}{save\+\_\+applied}} (request)
+\begin{DoxyCompactList}\small\item\em This function is used to save status of job applier to the job he has applied. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeed_1_1views_a5be9028a65220ab917aaf7b418c850ee}{applied\+\_\+job}} (request)
+\begin{DoxyCompactList}\small\item\em This function is used to show job seeker all the jobs he has applied to. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeed_1_1views_a3a864686748d93f42e4b874669ba0a40}{applied\+\_\+job\+\_\+update}} (request)
+\begin{DoxyCompactList}\small\item\em This function is used apply various filter to view the jobs posted. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeed_1_1views_a958cfb1a0791d216a06fc40271f03899}{delete\+\_\+applied\+\_\+job}} (request)
+\begin{DoxyCompactList}\small\item\em This function lets users to delete the job he has previously applied. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeed_1_1views_a589b032e2ed64073ee6f186aedb316ca}{posted\+\_\+job\+\_\+response}} (request)
+\begin{DoxyCompactList}\small\item\em This function lets job provider to see responses from job seekers. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeed_1_1views_a202c34707a7d88581fafaf27d37fe9f7}{posted\+\_\+job\+\_\+response\+\_\+update}} (request)
+\begin{DoxyCompactList}\small\item\em This function lets job provider to query his posted jobs and apply filters to them. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeed_1_1views_abb55c26e1592e8a35d20b7811961b403}{show\+\_\+job\+\_\+responses}} (request)
+\begin{DoxyCompactList}\small\item\em This function lets job provider to see detailed info of the job seekers who have applied for the job. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeed_1_1views_ae8d20df142dd5aec63239f9c49ddc677}{save\+\_\+job\+\_\+response}} (request)
+\begin{DoxyCompactList}\small\item\em This function helps job provider to select one or more job seeker for his posted job. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeed_1_1views_acf248185ae83a4417bdc4be6a768cfdf}{mark\+\_\+complete}} (request)
+\begin{DoxyCompactList}\small\item\em This function helps job provider to mark his posted job as complete. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeed_1_1views_aab3fef92faba473c54bbf2dcf1f8e1c1}{distance}} (lat1, lon1, lat2, lon2)
+\begin{DoxyCompactList}\small\item\em This function helps to calculate distance between job seeker and job location. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeed_1_1views_af23b6f30e996ce8c723004d027dba03e}{get\+\_\+sorted\+\_\+job\+\_\+details}} (details, lat, lon)
+\begin{DoxyCompactList}\small\item\em This function helps to sort job details table on basis distance between job seeker and job location. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacefeed_1_1views_a1cf3dd00f89fa56d1c70dbf774e68154}{current\+\_\+location}} (request)
+\begin{DoxyCompactList}\small\item\em This function helps to fetch current location of job seeker. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacefeed_1_1views_a5be9028a65220ab917aaf7b418c850ee}\label{namespacefeed_1_1views_a5be9028a65220ab917aaf7b418c850ee}} 
+\index{feed.views@{feed.views}!applied\_job@{applied\_job}}
+\index{applied\_job@{applied\_job}!feed.views@{feed.views}}
+\doxysubsubsection{\texorpdfstring{applied\_job()}{applied\_job()}}
+{\footnotesize\ttfamily def feed.\+views.\+applied\+\_\+job (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+This function is used to show job seeker all the jobs he has applied to. 
+
+This function helps user to see all the jobs he has applied to. We query both job-\/applied table and job-\/details table and perform a natural join to get the details of jobs job seeker has applied. \mbox{\Hypertarget{namespacefeed_1_1views_a3a864686748d93f42e4b874669ba0a40}\label{namespacefeed_1_1views_a3a864686748d93f42e4b874669ba0a40}} 
+\index{feed.views@{feed.views}!applied\_job\_update@{applied\_job\_update}}
+\index{applied\_job\_update@{applied\_job\_update}!feed.views@{feed.views}}
+\doxysubsubsection{\texorpdfstring{applied\_job\_update()}{applied\_job\_update()}}
+{\footnotesize\ttfamily def feed.\+views.\+applied\+\_\+job\+\_\+update (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+This function is used apply various filter to view the jobs posted. 
+
+This function helps user to query/view jobs and apply four filters. 1)current\+\_\+approval\+\_\+awaiting\+\_\+jobs 2)past\+\_\+approved\+\_\+jobs 3)past\+\_\+not\+\_\+responded\+\_\+jobs 4)Current\+\_\+approved\+\_\+jobs \mbox{\Hypertarget{namespacefeed_1_1views_a1cf3dd00f89fa56d1c70dbf774e68154}\label{namespacefeed_1_1views_a1cf3dd00f89fa56d1c70dbf774e68154}} 
+\index{feed.views@{feed.views}!current\_location@{current\_location}}
+\index{current\_location@{current\_location}!feed.views@{feed.views}}
+\doxysubsubsection{\texorpdfstring{current\_location()}{current\_location()}}
+{\footnotesize\ttfamily def feed.\+views.\+current\+\_\+location (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+This function helps to fetch current location of job seeker. 
+
+We are reuesting job seeker\textquotesingle{}s location, if the location isn\textquotesingle{}t already available in request.\+session \mbox{\Hypertarget{namespacefeed_1_1views_a958cfb1a0791d216a06fc40271f03899}\label{namespacefeed_1_1views_a958cfb1a0791d216a06fc40271f03899}} 
+\index{feed.views@{feed.views}!delete\_applied\_job@{delete\_applied\_job}}
+\index{delete\_applied\_job@{delete\_applied\_job}!feed.views@{feed.views}}
+\doxysubsubsection{\texorpdfstring{delete\_applied\_job()}{delete\_applied\_job()}}
+{\footnotesize\ttfamily def feed.\+views.\+delete\+\_\+applied\+\_\+job (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+This function lets users to delete the job he has previously applied. 
+
+This function helps user to delete his previously applied jobs. We query applied\+\_\+jobs table and delete the entry containg the current profile and job the user has selected. \mbox{\Hypertarget{namespacefeed_1_1views_aab3fef92faba473c54bbf2dcf1f8e1c1}\label{namespacefeed_1_1views_aab3fef92faba473c54bbf2dcf1f8e1c1}} 
+\index{feed.views@{feed.views}!distance@{distance}}
+\index{distance@{distance}!feed.views@{feed.views}}
+\doxysubsubsection{\texorpdfstring{distance()}{distance()}}
+{\footnotesize\ttfamily def feed.\+views.\+distance (\begin{DoxyParamCaption}\item[{}]{lat1,  }\item[{}]{lon1,  }\item[{}]{lat2,  }\item[{}]{lon2 }\end{DoxyParamCaption})}
+
+
+
+This function helps to calculate distance between job seeker and job location. 
+
+"{} This function will calculate the distance between two points job seeker(lat1,lon1) \& job location(lat2,lon2)
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat1} & Job-\/seeker Latitude \\
+\hline
+{\em lon1} & Job-\/seeker Longitude \\
+\hline
+{\em lat2} & Job-\/location Latitude \\
+\hline
+{\em lon2} & Job-\/location Longitude \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacefeed_1_1views_af773e058f670ced9d8490c502ac706ea}\label{namespacefeed_1_1views_af773e058f670ced9d8490c502ac706ea}} 
+\index{feed.views@{feed.views}!feed@{feed}}
+\index{feed@{feed}!feed.views@{feed.views}}
+\doxysubsubsection{\texorpdfstring{feed()}{feed()}}
+{\footnotesize\ttfamily def feed.\+views.\+feed (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+This function is used genrating new Job feed for the user. 
+
+This function genrates feed for user.\+Tasks that this function accomplishes are displaying user avatar, Ordering jobs based on Longitude and Latitude of the current User, and displaying the final job feeds. \mbox{\Hypertarget{namespacefeed_1_1views_a1a968211a2d68e2560fda0fdc04bd4e7}\label{namespacefeed_1_1views_a1a968211a2d68e2560fda0fdc04bd4e7}} 
+\index{feed.views@{feed.views}!feed\_update@{feed\_update}}
+\index{feed\_update@{feed\_update}!feed.views@{feed.views}}
+\doxysubsubsection{\texorpdfstring{feed\_update()}{feed\_update()}}
+{\footnotesize\ttfamily def feed.\+views.\+feed\+\_\+update (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+This function is used updating and filtering new Job feed for the user. 
+
+This function updates the feed for user.\+Tasks that this function accomplishes are Filtering job feeds on basis of price, on basis of skill required for the job, also facilitates searching in job description of jobs through search bar. \mbox{\Hypertarget{namespacefeed_1_1views_af23b6f30e996ce8c723004d027dba03e}\label{namespacefeed_1_1views_af23b6f30e996ce8c723004d027dba03e}} 
+\index{feed.views@{feed.views}!get\_sorted\_job\_details@{get\_sorted\_job\_details}}
+\index{get\_sorted\_job\_details@{get\_sorted\_job\_details}!feed.views@{feed.views}}
+\doxysubsubsection{\texorpdfstring{get\_sorted\_job\_details()}{get\_sorted\_job\_details()}}
+{\footnotesize\ttfamily def feed.\+views.\+get\+\_\+sorted\+\_\+job\+\_\+details (\begin{DoxyParamCaption}\item[{}]{details,  }\item[{}]{lat,  }\item[{}]{lon }\end{DoxyParamCaption})}
+
+
+
+This function helps to sort job details table on basis distance between job seeker and job location. 
+
+Returns the job details queryset in sorted order by distance
+
+
+\begin{DoxyParams}{Parameters}
+{\em lat} & Job-\/seeker Latitude \\
+\hline
+{\em lon} & Job-\/seeker Longitude \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{namespacefeed_1_1views_acc44d87525898414f623e367dbb468c9}\label{namespacefeed_1_1views_acc44d87525898414f623e367dbb468c9}} 
+\index{feed.views@{feed.views}!job\_info@{job\_info}}
+\index{job\_info@{job\_info}!feed.views@{feed.views}}
+\doxysubsubsection{\texorpdfstring{job\_info()}{job\_info()}}
+{\footnotesize\ttfamily def feed.\+views.\+job\+\_\+info (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+This function is used to display the job posted by job provider. 
+
+This function helps to create a template of Job details to display to job-\/seeker. We first extract data of job details from database and add it to a variable. Then we also query the profile table in database to get details about job poster. After all that we generate a template using this variable. \mbox{\Hypertarget{namespacefeed_1_1views_acf248185ae83a4417bdc4be6a768cfdf}\label{namespacefeed_1_1views_acf248185ae83a4417bdc4be6a768cfdf}} 
+\index{feed.views@{feed.views}!mark\_complete@{mark\_complete}}
+\index{mark\_complete@{mark\_complete}!feed.views@{feed.views}}
+\doxysubsubsection{\texorpdfstring{mark\_complete()}{mark\_complete()}}
+{\footnotesize\ttfamily def feed.\+views.\+mark\+\_\+complete (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+This function helps job provider to mark his posted job as complete. 
+
+In this function we query Job details table using job\+\_\+id and set is\+\_\+job\+\_\+completed column to be T\+R\+UE. \mbox{\Hypertarget{namespacefeed_1_1views_a5310a2df72dd1dd7dad65e1b04f5a854}\label{namespacefeed_1_1views_a5310a2df72dd1dd7dad65e1b04f5a854}} 
+\index{feed.views@{feed.views}!post\_job@{post\_job}}
+\index{post\_job@{post\_job}!feed.views@{feed.views}}
+\doxysubsubsection{\texorpdfstring{post\_job()}{post\_job()}}
+{\footnotesize\ttfamily def feed.\+views.\+post\+\_\+job (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+This function is used displaying a page that job provider uses to add job. 
+
+This function enables the job provider for adding a new job. \mbox{\Hypertarget{namespacefeed_1_1views_a589b032e2ed64073ee6f186aedb316ca}\label{namespacefeed_1_1views_a589b032e2ed64073ee6f186aedb316ca}} 
+\index{feed.views@{feed.views}!posted\_job\_response@{posted\_job\_response}}
+\index{posted\_job\_response@{posted\_job\_response}!feed.views@{feed.views}}
+\doxysubsubsection{\texorpdfstring{posted\_job\_response()}{posted\_job\_response()}}
+{\footnotesize\ttfamily def feed.\+views.\+posted\+\_\+job\+\_\+response (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+This function lets job provider to see responses from job seekers. 
+
+This function helps job provider to see responses from job seeker on his posted job. We query the job details and Applied jobs and inner join them. Then we filter jobs using job id of current user. \mbox{\Hypertarget{namespacefeed_1_1views_a202c34707a7d88581fafaf27d37fe9f7}\label{namespacefeed_1_1views_a202c34707a7d88581fafaf27d37fe9f7}} 
+\index{feed.views@{feed.views}!posted\_job\_response\_update@{posted\_job\_response\_update}}
+\index{posted\_job\_response\_update@{posted\_job\_response\_update}!feed.views@{feed.views}}
+\doxysubsubsection{\texorpdfstring{posted\_job\_response\_update()}{posted\_job\_response\_update()}}
+{\footnotesize\ttfamily def feed.\+views.\+posted\+\_\+job\+\_\+response\+\_\+update (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+This function lets job provider to query his posted jobs and apply filters to them. 
+
+This function helps job provider to filter and view his posted jobs\+: This filter works using a variable is\+\_\+job\+\_\+completed to see if the job is completed. \mbox{\Hypertarget{namespacefeed_1_1views_aee8789d262e18dbed697d55f72af39cc}\label{namespacefeed_1_1views_aee8789d262e18dbed697d55f72af39cc}} 
+\index{feed.views@{feed.views}!save\_applied@{save\_applied}}
+\index{save\_applied@{save\_applied}!feed.views@{feed.views}}
+\doxysubsubsection{\texorpdfstring{save\_applied()}{save\_applied()}}
+{\footnotesize\ttfamily def feed.\+views.\+save\+\_\+applied (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+This function is used to save status of job applier to the job he has applied. 
+
+\mbox{\Hypertarget{namespacefeed_1_1views_ae8d20df142dd5aec63239f9c49ddc677}\label{namespacefeed_1_1views_ae8d20df142dd5aec63239f9c49ddc677}} 
+\index{feed.views@{feed.views}!save\_job\_response@{save\_job\_response}}
+\index{save\_job\_response@{save\_job\_response}!feed.views@{feed.views}}
+\doxysubsubsection{\texorpdfstring{save\_job\_response()}{save\_job\_response()}}
+{\footnotesize\ttfamily def feed.\+views.\+save\+\_\+job\+\_\+response (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+This function helps job provider to select one or more job seeker for his posted job. 
+
+In this function we query apllied jobs table using user id and job\+\_\+id and set is\+\_\+job\+\_\+approved column to be T\+R\+UE. \mbox{\Hypertarget{namespacefeed_1_1views_abb55c26e1592e8a35d20b7811961b403}\label{namespacefeed_1_1views_abb55c26e1592e8a35d20b7811961b403}} 
+\index{feed.views@{feed.views}!show\_job\_responses@{show\_job\_responses}}
+\index{show\_job\_responses@{show\_job\_responses}!feed.views@{feed.views}}
+\doxysubsubsection{\texorpdfstring{show\_job\_responses()}{show\_job\_responses()}}
+{\footnotesize\ttfamily def feed.\+views.\+show\+\_\+job\+\_\+responses (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+This function lets job provider to see detailed info of the job seekers who have applied for the job. 
+
+This functions helps job provider to see detailed job seekers info. From Applied jobs table on the basis of job\+\_\+id we get all users who has applied that particular job. Then using Profile table we get detailed information about each job seeker. \mbox{\Hypertarget{namespacefeed_1_1views_a71b3d194dc0441138481702c26901502}\label{namespacefeed_1_1views_a71b3d194dc0441138481702c26901502}} 
+\index{feed.views@{feed.views}!submit\_job@{submit\_job}}
+\index{submit\_job@{submit\_job}!feed.views@{feed.views}}
+\doxysubsubsection{\texorpdfstring{submit\_job()}{submit\_job()}}
+{\footnotesize\ttfamily def feed.\+views.\+submit\+\_\+job (\begin{DoxyParamCaption}\item[{}]{request }\end{DoxyParamCaption})}
+
+
+
+This function is used store the job data in databse, recieved from the job provider. 
+
+This function extracts the data from the post of the frontend and populate in databsae. 

@@ -1,0 +1,141 @@
+{% extends "nav.html" %}
+
+{% block content %}
+  <style>
+
+    .row.content {height: 100vh;}
+    
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+  </style>
+
+  <script>
+    function get_jobs(id)
+    {
+          $("#seeker_nav li").removeClass("active");
+          $("#"+id).addClass("active");
+          var URL = "{% url 'posted_job_response_update' %}";
+          var data = {'type': id};
+          $.ajaxSetup({
+        data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+       });
+          $.post(URL, data,function( data ) {
+          $( "#resp_job" ).html( data );
+        
+        });
+        
+      
+    }
+
+
+    function marksASCompleted(id)
+  {
+
+      var btn = document.getElementById(id);
+
+      btn_jq = $("#"+id)
+      var job_id=btn.name
+      var data ={'job_id':id};
+      var URL = "{% url 'mark_complete' %}";
+
+    $.ajaxSetup(
+      {
+        data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+      });
+
+    $.post(URL, data,function( data ) {
+        
+        });
+
+        if (btn.value == "Mark job as Completed ?") 
+      {
+        btn.value = "Job Completed";
+        btn_jq.removeClass("btn-primary");
+        btn_jq.addClass("btn-success");
+      }
+      else 
+      {
+        btn.value = "Mark job as Completed ?"
+        btn_jq.removeClass("btn-success");
+        btn_jq.addClass("btn-primary");
+      }
+
+  }
+
+
+
+  </script>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <br>
+      <h2>Job Responses :</h2>
+      <ul class="nav nav-pills nav-stacked" id="seeker_nav">
+        <li class="active" id="upcoming_jobs" onclick="get_jobs(this.id)"><a >Upcomming Jobs</a></li>
+        <li  id="past_jobs" onclick="get_jobs(this.id)"><a >Past Jobs</a></li>
+      </ul><br>
+    </div>
+
+      <div class="col-sm-9">
+        <div class="row">
+          <br><br><br>
+        </div>
+        <div id="resp_job">
+          {% for i in jobs %}
+            <div class="row">
+                <div class="col-sm-12">
+                <div class="well" style="padding-bottom: 4px;">
+                    <div class="row">
+                    <div class="col-sm-3 label label-success" style="font-size: larger;">When : {{i.job_date}},{{i.job_time}}</div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-sm-2  label" style="font-size: larger;">
+                            <div class="row label-danger">Money : {{i.job_price}}</div>
+                        </div>
+                        <div class="col-sm-7" style="padding: 3%;">
+                            {{i.job_desc}}
+                        </div>
+                        <div class="col-sm-3" style="padding: 3%;">
+                          <div class="row">
+                          <form action="{% url 'show_job_responses' %}" method="post" >
+                            {% csrf_token %}
+                              <input type="text" value={{i.job_id}} name="job_id" style="display: none">
+                              <input type="submit"  class="btn btn-primary" style="width: 100%;height: 100%;" value="View Responses">
+                          </form>
+                        </div>
+                        <div class="row">
+                            <br>
+                            {% if i.is_job_completed == False %}
+                            <input id="{{i.job_id}}" type="button"  class="btn btn-primary" style="width: 100%;height: 100%;" value="Mark job as Completed ?" onclick="marksASCompleted(this.id)" >
+                            {% else %}
+                            <input id="{{i.job_id}}" type="button"  class="btn btn-success" style="width: 100%;height: 100%;" value="Job Completed" onclick="marksASCompleted(this.id)">
+                            {% endif %}
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-sm-12  label label-warning" style="font-size: inherit;">
+                        {{i.job_address}}
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+          {% endfor %}  
+
+
+        </div>
+      </div>
+  </div>
+</div>
+
+
+{% endblock %}

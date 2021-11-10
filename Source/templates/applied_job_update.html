@@ -1,0 +1,31 @@
+{% for i in jobs %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="well" style="padding-bottom: 4px;">
+            <div class="row">
+                <div class="col-sm-3 label label-success" style="font-size: larger;">When : {{i.job_id.job_date}},{{i.job_id.job_time}}</div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-2  label" style="font-size: larger;">
+                    <div class="row label-danger">Money : {{i.job_price}}</div>
+                </div>
+                <div class="col-sm-8" style="padding: 3%;">
+                    {{i.job_id.job_desc}}
+                </div>
+                <div class="col-sm-2" style="padding: 3%;">
+                    <button type="button" id="{{ i.job_id.job_id }}" class="btn btn-primary" style="width: 100%;height: 100%;" onclick="delete_job_func( {{ i.job_id.job_id }} )">Delete</button>
+                 </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12  label label-warning" style="font-size: inherit;">
+                    {{i.job_id.job_address}}
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+  {% endfor %}
+
+

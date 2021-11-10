@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>NVJF</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+{% block nav %}
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">NVJF</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+
+        {% if request.session.profile_type == '3' or request.session.profile_type == '1'  %}
+        <li {% if request.session.navbar == 1 %}class="active"{% endif %}><a href="/feed/">New Jobs</a></li>
+        {% endif %}
+
+        {% if request.session.profile_type == '3' or request.session.profile_type == '1'  %}
+        <li {% if request.session.navbar == 2 %}class="active"{% endif %}><a href="/applied_job/">Applied Job</a></li>
+        {% endif %}
+        
+        {% if request.session.profile_type == '3' or request.session.profile_type == '2'  %}
+        <li {% if request.session.navbar == 3 %}class="active"{% endif %}><a href="/posted_job_response/">Posted Job Responses</a></li>
+        {% endif %}
+
+
+        {% if request.session.profile_type == '3' or request.session.profile_type == '2'  %}
+        <li {% if request.session.navbar == 4 %}class="active"{% endif %}><a href="/post_job/">Post a Job</a></li>
+        {% endif %}
+
+        
+      
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li {% if request.session.navbar == 5 %}class="active"{% endif %}><a href="/fetch_profile/"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
+        <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+  
+{% endblock %}
+</body>
+</html>
+
+
