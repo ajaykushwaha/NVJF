@@ -1,13 +1,4 @@
-----------------CS699 Project------------------
-Phantom Troupe
-
 Nearest Vocational Job Finder(NVJF)
-
-Ajay Sarup Jain -  203050036
-Mahendra Patel  -  203050078
-Ajay Shyamsunder - 203059009
-Polu Varshith -    203050099
-Avijit Darshal -   203051001
 
 
 Motivation
